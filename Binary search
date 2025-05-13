@@ -66,3 +66,10 @@ int main() {
 
     return 0;
 }
+
+Enter the number of elements (up to 1000): 10
+Array elements (sorted):
+91 52 32 71 31 12 25 43 12 26 
+Random key to search for: 86
+Element not found
+Time Taken in seconds: 0.000001
