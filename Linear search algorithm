@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define MAX_SIZE 1000  // Define the maximum allowed size
+
 int main() {
     int key, n, count = 0, i;
     clock_t start_time, end_time;
@@ -17,9 +19,11 @@ int main() {
 
     int a[MAX_SIZE];
 
-    srand(time(0));
+    srand(time(0)); // Seed random number generator
+
+    // Generate random elements
     for (i = 0; i < n; i++) {
-        a[i] = rand() % 100;
+        a[i] = rand() % 100;  // Random number between 0 and 99
     }
 
     printf("Array elements:\n");
@@ -31,12 +35,17 @@ int main() {
     key = rand() % 100;
     printf("Random key to search for: %d\n", key);
 
+    // Start timing
     start_time = clock();
+
+    // Linear search
     for (i = 0; i < n; i++) {
         if (a[i] == key) {
             count++;
         }
     }
+
+    // End timing
     end_time = clock();
 
     time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
@@ -51,3 +60,12 @@ int main() {
 
     return 0;
 }
+
+Ouput:
+
+Enter the number of elements (up to 1000): 10
+Array elements:
+35 45 53 99 9 48 21 67 42 17 
+Random key to search for: 2
+Element not found
+Time Taken for search in seconds: 0.000002
